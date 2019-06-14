@@ -1,0 +1,164 @@
+.class public Lcom/a/a/j/m;
+.super Ljava/lang/Object;
+.source "ViewPreloadSizeProvider.java"
+
+# interfaces
+.implements Lcom/a/a/h/a/n;
+.implements Lcom/a/a/i$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/a/a/j/m$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lcom/a/a/h/a/n;",
+        "Lcom/a/a/i$b<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field private a:[I
+
+.field private b:Lcom/a/a/j/m$a;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroid/support/annotation/af;
+        .end annotation
+    .end param
+
+    .line 44
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 45
+    new-instance v0, Lcom/a/a/j/m$a;
+
+    invoke-direct {v0, p1, p0}, Lcom/a/a/j/m$a;-><init>(Landroid/view/View;Lcom/a/a/h/a/n;)V
+
+    iput-object v0, p0, Lcom/a/a/j/m;->b:Lcom/a/a/j/m$a;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(II)V
+    .locals 2
+
+    const/4 v0, 0x2
+
+    .line 60
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    aput p1, v0, v1
+
+    const/4 p1, 0x1
+
+    aput p2, v0, p1
+
+    iput-object v0, p0, Lcom/a/a/j/m;->a:[I
+
+    const/4 p1, 0x0
+
+    .line 61
+    iput-object p1, p0, Lcom/a/a/j/m;->b:Lcom/a/a/j/m$a;
+
+    return-void
+.end method
+
+.method public a(Landroid/view/View;)V
+    .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroid/support/annotation/af;
+        .end annotation
+    .end param
+
+    .line 74
+    iget-object v0, p0, Lcom/a/a/j/m;->a:[I
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/a/a/j/m;->b:Lcom/a/a/j/m$a;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    .line 77
+    :cond_0
+    new-instance v0, Lcom/a/a/j/m$a;
+
+    invoke-direct {v0, p1, p0}, Lcom/a/a/j/m$a;-><init>(Landroid/view/View;Lcom/a/a/h/a/n;)V
+
+    iput-object v0, p0, Lcom/a/a/j/m;->b:Lcom/a/a/j/m$a;
+
+    return-void
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public a(Ljava/lang/Object;II)[I
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroid/support/annotation/af;
+        .end annotation
+    .end param
+    .annotation build Landroid/support/annotation/ag;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;II)[I"
+        }
+    .end annotation
+
+    .line 51
+    iget-object p1, p0, Lcom/a/a/j/m;->a:[I
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    .line 54
+    :cond_0
+    iget-object p1, p0, Lcom/a/a/j/m;->a:[I
+
+    iget-object p2, p0, Lcom/a/a/j/m;->a:[I
+
+    array-length p2, p2
+
+    invoke-static {p1, p2}, Ljava/util/Arrays;->copyOf([II)[I
+
+    move-result-object p1
+
+    return-object p1
+.end method

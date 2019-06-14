@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:id="@id/playlist_selector_title" android:paddingLeft="24.0dip" android:paddingTop="16.0dip" android:paddingRight="24.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manage Playlist" />
+    <com.woxthebox.draglistview.DragListView android:id="@id/playlist_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <com.google.android.flexbox.FlexboxLayout android:orientation="horizontal" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:flexWrap="wrap"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:layout_gravity="start" android:id="@id/add_url_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add URL" android:layout_marginStart="24.0dip" style="@style/Widget.AppCompat.Button.Colored" />
+        <Button android:layout_gravity="start" android:id="@id/add_file_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add File" android:layout_marginStart="24.0dip" style="@style/Widget.AppCompat.Button.Colored" />
+        <Button android:layout_gravity="start" android:id="@id/add_folder_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Folder" android:layout_marginStart="24.0dip" style="@style/Widget.AppCompat.Button.Colored" />
+        <Button android:layout_gravity="start" android:id="@id/add_youtube_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Youtube" android:layout_marginStart="24.0dip" style="@style/Widget.AppCompat.Button.Colored" />
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

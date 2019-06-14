@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="top" android:orientation="vertical" android:background="@color/colorTransparent" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/addressBarArea" android:background="@color/colorBackground" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:layout_gravity="center_vertical" android:id="@id/addressBarUri" android:background="@drawable/address_bar_style" android:padding="5.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="4.0dip" android:hint="Enter URL" android:maxLines="1" android:ems="10" android:selectAllOnFocus="true" android:inputType="textUri" android:imeOptions="actionGo|flagNoExtractUi" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/webviewUnderlay" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v4.widget.SwipeRefreshLayout android:id="@id/swipeRefreshContainer" android:layout_width="fill_parent" android:layout_height="fill_parent"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <de.ozerov.fully.MyWebView android:id="@id/webview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <ProgressBar android:layout_gravity="center|top" android:id="@id/progressBar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-6.0dip" android:layout_marginBottom="-6.0dip" style="?android:progressBarStyleHorizontal" />
+    </FrameLayout>
+</LinearLayout>

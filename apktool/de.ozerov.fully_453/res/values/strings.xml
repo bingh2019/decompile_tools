@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="RA_html_ending">"&lt;/div>&lt;/body>&lt;/html>
+"</string>
+    <string name="abc_action_bar_home_description">Navigate home</string>
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <string name="abc_action_menu_overflow_description">More options</string>
+    <string name="abc_action_mode_done">Done</string>
+    <string name="abc_activity_chooser_view_see_all">See all</string>
+    <string name="abc_activitychooserview_choose_application">Choose an app</string>
+    <string name="abc_capital_off">OFF</string>
+    <string name="abc_capital_on">ON</string>
+    <string name="abc_font_family_body_1_material">sans-serif</string>
+    <string name="abc_font_family_body_2_material">sans-serif-medium</string>
+    <string name="abc_font_family_button_material">sans-serif-medium</string>
+    <string name="abc_font_family_caption_material">sans-serif</string>
+    <string name="abc_font_family_display_1_material">sans-serif</string>
+    <string name="abc_font_family_display_2_material">sans-serif</string>
+    <string name="abc_font_family_display_3_material">sans-serif</string>
+    <string name="abc_font_family_display_4_material">sans-serif-light</string>
+    <string name="abc_font_family_headline_material">sans-serif</string>
+    <string name="abc_font_family_menu_material">sans-serif</string>
+    <string name="abc_font_family_subhead_material">sans-serif</string>
+    <string name="abc_font_family_title_material">sans-serif-medium</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Search…</string>
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <string name="abc_searchview_description_query">Search query</string>
+    <string name="abc_searchview_description_search">Search</string>
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <string name="abc_searchview_description_voice">Voice search</string>
+    <string name="abc_shareactionprovider_share_with">Share with</string>
+    <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
+    <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="action">Sign in</string>
+    <string name="app_name">Fully Kiosk Browser</string>
+    <string name="app_owner" />
+    <string name="button_hide_input">Hide Input</string>
+    <string name="button_unhide_input">Unhide Input</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_button_label">Cancel</string>
+    <string name="choose_button_label">Select</string>
+    <string name="crash_again_toast_text">App stopped working again</string>
+    <string name="crash_toast_text">App stopped working</string>
+    <string name="current_pin">Hint: Current PIN is %1$s. This hint will disappear if you get a PLUS license.</string>
+    <string name="default_dir">/sdcard</string>
+    <string name="default_start_URL">https://en.wikipedia.org/</string>
+    <string name="device_admin_description">Switch the screen off and hibernate device</string>
+    <string name="device_admin_description2">Switch the screen off and hibernate device, lock the safe mode and use KNOX features</string>
+    <string name="device_owner_description">This app is holding device owner permissions</string>
+    <string name="elm_activated_succesfully">Knox ELM activated successfully</string>
+    <string name="enter_kiosk_pin">Enter Kiosk PIN</string>
+    <string name="enter_super_pin">Enter PIN</string>
+    <string name="err_elm_code_unknown">ELM: Error code unknown %1$s, status %2$s</string>
+    <string name="err_elm_internal">ELM: Internal error</string>
+    <string name="err_elm_internal_server">ELM: Internal server error</string>
+    <string name="err_elm_invalid_package_name">ELM: Invalid package name</string>
+    <string name="err_elm_licence_invalid_license">ELM: Invalid license</string>
+    <string name="err_elm_licence_terminated">ELM: License terminated</string>
+    <string name="err_elm_network_disconnected">ELM: Network disconnected</string>
+    <string name="err_elm_network_general">ELM: Network general error</string>
+    <string name="err_elm_not_current_date">ELM: Not current date</string>
+    <string name="err_elm_null_params">ELM: NULL params</string>
+    <string name="err_elm_sig_mismatch">ELM: Caller package signature mismatch</string>
+    <string name="err_elm_unknown">ELM: Error unknown</string>
+    <string name="err_elm_user_disagrees_license_agreement">ELM: User disagrees EULA</string>
+    <string name="err_elm_ver_code_mismatch">ELM: Caller package version code mismatch</string>
+    <string name="err_skl_code_unknown">SKL: Error code unknown %1$s, status %2$s</string>
+    <string name="err_skl_internal">SKL: Internal error</string>
+    <string name="err_skl_internal_server">SKL: Internal server error</string>
+    <string name="err_skl_invalid_package_name">SKL: Invalid package name</string>
+    <string name="err_skl_licence_invalid_license">SKL: Invalid license</string>
+    <string name="err_skl_licence_terminated">SKL: License terminated</string>
+    <string name="err_skl_network_disconnected">SKL: Network disconnected</string>
+    <string name="err_skl_network_general">SKL: Network general error</string>
+    <string name="err_skl_not_current_date">SKL: Not current date</string>
+    <string name="err_skl_null_params">SKL: NULL params</string>
+    <string name="err_skl_sig_mismatch">SKL: Caller package signature mismatch</string>
+    <string name="err_skl_unknown">SKL: Error unknown</string>
+    <string name="err_skl_user_disagrees_license_agreement">SKL: User disagrees EULA</string>
+    <string name="err_skl_ver_code_mismatch">SKL: Caller package version code mismatch</string>
+    <string name="error_dir_access">Directory cannot be accessed</string>
+    <string name="exit_kiosk_mode_title">Disable the Kiosk Mode or Go Out?</string>
+    <string name="exit_kiosk_mode_title_no_goout">Disable the Kiosk Mode?</string>
+    <string name="exit_kiosk_summary">If you chose Temporary Exit, press the Home button to re-enter.</string>
+    <string name="gesture_default_swipe">0</string>
+    <string name="gesture_double_taps">1</string>
+    <string name="gesture_five_taps">2</string>
+    <string name="gesture_volume_down_taps">101</string>
+    <string name="go_out_button">Go Out</string>
+    <string name="info">Info</string>
+    <string name="knox_no_intent">License activation intent is not available</string>
+    <string name="knox_no_intent_action">License activation intent action is not available</string>
+    <string name="label_parent_dir">...</string>
+    <string name="label_parent_directory">Parent Directory</string>
+    <string name="last_edit">Last edited:</string>
+    <string name="loading_webview">Loading Webview...</string>
+    <string name="locked_for_maintenance">Locked for Maintenance</string>
+    <string name="menu_clearcache_summary">Remove cached web content</string>
+    <string name="menu_clearcache_title">Clear Cache</string>
+    <string name="menu_exit_summary">Close website and exit app</string>
+    <string name="menu_exit_title">"Exit "</string>
+    <string name="menu_exit_video_summary">Close player and exit app</string>
+    <string name="menu_play_summary">Reload and rewind playlist</string>
+    <string name="menu_play_title">Start Playing</string>
+    <string name="menu_playlist_summary">Add URLs, files and folders</string>
+    <string name="menu_playlist_title">Manage Playlist</string>
+    <string name="menu_reload_summary">Reload Start URL now</string>
+    <string name="menu_settings_summary">Change your preferences</string>
+    <string name="menu_settings_title">Settings</string>
+    <string name="menu_settings_video_summary">Change other preferences</string>
+    <string name="menu_starturl_title">Goto Start URL</string>
+    <string name="menu_stop_summary">Stop current playlist</string>
+    <string name="menu_stop_title">Stop Playing</string>
+    <string name="next">Next</string>
+    <string name="ok">OK</string>
+    <string name="password">Password</string>
+    <string name="pdf_viewer_title_with_index">PDF Viewer (%1$d/%2$d)</string>
+    <string name="pref_addition_default">default</string>
+    <string name="pref_addition_disabled">disabled</string>
+    <string name="pref_current_addition">", current: "</string>
+    <string name="previous">Previous</string>
+    <string name="search_menu_title">Search</string>
+    <string name="service_card_reader_description">Card Reader Service</string>
+    <string name="service_cloud_description">Kiosk Cloud Communication Service</string>
+    <string name="service_foreground_description">Kiosk Priority Service</string>
+    <string name="service_helper_description">Kiosk Helper Service</string>
+    <string name="service_motion_detection_description">Visual Motion Detector Service</string>
+    <string name="service_remote_admin_description">Kiosk Remote Admin Service</string>
+    <string name="service_sound_meter_description">Acoustic Motion Detectoin Service</string>
+    <string name="service_task_protection_description">Kiosk Advanced Protection Service</string>
+    <string name="sign_in_to" formatted="false">Sign in to %s1 \"%s2\"</string>
+    <string name="skl_activated_successfully">Knox SKL activated successfully</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="toast_clearingcache">Clearing cache</string>
+    <string name="toast_welcome">Welcome! Swipe from the left edge for menu.</string>
+    <string name="toast_welcome_kiosk">Welcome in Kiosk Mode!</string>
+    <string name="toast_welcome_kiosk_non_strict">Welcome! Kiosk Mode is active, but Home Button is not locked.</string>
+    <string name="username">Username</string>
+    <string name="versionInfo">" "<b>"What's new in Version 1.28?"</b>"
+ "<ul> <li>"Add Share Button
+"</li> <li>"Single App Kiosk Mode for Android 8+
+"</li> <li>"Support Different Provisioning Methods
+"</li> <li>"Improved Support for Android 8 and 9
+"</li> </ul>" 
+ "<b>"What's new in Version 1.27?"</b>"
+ "<ul> <li>"Improve Intent URL Handling
+"</li> <li>"Load Error URL on Disconnect
+"</li> <li>"Load Current Page on Auto Reload
+"</li> <li>"New REST and JavaScript Interfaces
+"</li> <li>"Remote Admin via HTTPS
+"</li> <li>"Disable Screenshot and Camshot on Remote Admin
+"</li> <li>"Some Bugfixes
+"</li> </ul>" 
+ "<b>"What's new in Version 1.26?"</b>"
+ "<ul> <li>"Optionally Disable All Touch Interactions
+"</li> <li>"Optionally Disable Scrolling
+"</li> <li>"Play Youtube Videos and Playlists on Screensaver
+"</li> <li>"Custom Action Bar Button
+"</li> <li>"Improve Kiosk Protection
+"</li> <li>"New REST and JavaScript Interfaces
+"</li> <li>"Some Bugfixes
+"</li> </ul>" 
+ "<b>"What's new in Version 1.25?"</b>"
+ "<ul> <li>"Render PDF Files with PDF.js
+"</li> <li>"Show Tabs for Browser Frames
+"</li> <li>"Open Multiple Start URLs in Tabs
+"</li> <li>"Swipe to Change Tabs
+"</li> <li>"New JavaScript Interface to Change Tabs
+"</li> <li>"Custom Tab Colors
+"</li> <li>"Custom Progress Bar Color
+"</li> <li>"Better Support for Fire OS
+"</li> <li>"Pick a Settings File for Import
+"</li> <li>"Inject JavaScript
+"</li> </ul>" 
+ "<b>"What's new in Version 1.24?"</b>"
+ "<ul> <li>"Support NFC Device Provisioning
+"</li> <li>"Support Samsung KNOX Features
+"</li> <li>"Change Policies for Provisioned and KNOX Capable Devices
+"</li> <li>"Silent App Install for Provisioned Devices
+"</li> <li>"Add Device to Fully Cloud from the App
+"</li> <li>"Force Immersive Fullscreen for Other Apps
+"</li> <li>"Some Bugfixes
+"</li> </ul>" 
+ "<b>"What's new in Version 1.23?"</b>"
+ "<ul> <li>"Play Videos, Slideshows or Websites in Screensaver
+"</li> <li>"Optionally don't Lock Home Button in Kiosk Mode
+"</li> <li>"Manage Sleep/Wakeup Times for Days of Week
+"</li> <li>"Add File Shortcuts to Universal Launcher
+"</li> <li>"Improved Support for Android TV
+"</li> <li>"Acoustic Motion Detection
+"</li> <li>"Safe Mode Lock
+"</li> </ul>" 
+ "<b>"What's new in Version 1.22?"</b>"
+ "<ul> <li>"Set Screen Brightness for Screensaver
+"</li> <li>"Daydream Screensaver Integration
+"</li> <li>"Improved File Download Handling
+"</li> <li>"Better Support for Android 8
+"</li> <li>"Better Support for Files on External SD Card
+"</li> <li>"Allow Local Files for App Launcher Icons
+"</li> <li>"Device Info in Settings
+"</li> <li>"New Splash Screen
+"</li> </ul>" 
+ "<b>"What's new in Version 1.21?"</b>"
+ "<ul> <li>"Mix Apps and Web Bookmarks on App Launcher
+"</li> <li>"Edit Launcher Items
+"</li> <li>"Select Launcher Background Color and Scaling
+"</li> <li>"Single App Kiosk Mode
+"</li> <li>"Load Best Icon for Add to Home
+"</li> <li>"Pick Apps for Whitelist
+"</li> <li>"New REST API Commands
+"</li> </ul>" 
+ "</string>
+</resources>

@@ -1,0 +1,71 @@
+.class public final Lorg/jsoup/e/d$ad;
+.super Lorg/jsoup/e/d;
+.source "Evaluator.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/jsoup/e/d;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "ad"
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 590
+    invoke-direct {p0}, Lorg/jsoup/e/d;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Lorg/jsoup/nodes/i;Lorg/jsoup/nodes/i;)Z
+    .locals 0
+
+    .line 593
+    invoke-virtual {p2}, Lorg/jsoup/nodes/i;->y()Lorg/jsoup/nodes/i;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 594
+    instance-of p1, p1, Lorg/jsoup/nodes/g;
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p2}, Lorg/jsoup/nodes/i;->G()Lorg/jsoup/e/c;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/jsoup/e/c;->size()I
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, ":only-child"
+
+    return-object v0
+.end method

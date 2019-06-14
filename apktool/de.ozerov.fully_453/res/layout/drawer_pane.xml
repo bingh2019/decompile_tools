@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="start" android:id="@id/drawerPane" android:focusable="true" android:clickable="true" android:layout_width="280.0dip" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/header_box" />
+    <LinearLayout android:orientation="vertical" android:id="@id/playButtons" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/headerBox">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/playButtonStop" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_stop" android:contentDescription="Stop" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/playButtonPause" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_pause" android:contentDescription="Pause" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/playButtonPlay" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_play_arrow" android:contentDescription="Play" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/playButtonNext" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_skip_next" android:contentDescription="Next" />
+        </LinearLayout>
+        <View android:id="@id/separator1" android:background="#80a0a0a0" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+    <ListView android:id="@id/menuList" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:choiceMode="singleChoice" android:layout_below="@id/playButtons" />
+    <FrameLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/menuList">
+        <TextView android:textSize="14.0sp" android:gravity="bottom|center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="4.0dip" android:text="@string/app_owner" />
+    </FrameLayout>
+</RelativeLayout>

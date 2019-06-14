@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="top" android:orientation="vertical" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:id="@id/webTabFlapAreaScrollView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fillViewport="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/webTabFlapArea" android:background="@color/colorBlack" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="36.0dip" />
+    </HorizontalScrollView>
+    <FrameLayout android:id="@id/webTabHolder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

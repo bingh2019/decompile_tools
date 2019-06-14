@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="accelerationModeEntries">
+        <item>Hardware (default)</item>
+        <item>Software</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="accelerationModeValues">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="cacheModeEntries">
+        <item>Default</item>
+        <item>Use cache even if expired</item>
+        <item>Never use cache</item>
+        <item>Never use the network</item>
+    </string-array>
+    <string-array name="cacheModeValues">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="dayofweek_array">
+        <item>Disabled</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Every day</item>
+        <item>Monday to Friday</item>
+        <item>Weekend</item>
+    </string-array>
+    <string-array name="file_order_array">
+        <item>File name A to Z</item>
+        <item>File name Z to A</item>
+        <item>File path A to Z</item>
+        <item>File path Z to A</item>
+        <item>Oldest first</item>
+        <item>Latest first</item>
+        <item>Smallest first</item>
+        <item>Biggest first</item>
+        <item>Random</item>
+        <item>Unsorted</item>
+    </string-array>
+    <string-array name="kioskExitGestureListEntries">
+        <item>Swipe from Left or Long Press Back</item>
+        <item>Fast 5 Taps Anywhere</item>
+        <item>Double Tap Top Left and Bottom Right Corner</item>
+    </string-array>
+    <string-array name="kioskExitGestureListValues">
+        <item>@string/gesture_default_swipe</item>
+        <item>@string/gesture_five_taps</item>
+        <item>@string/gesture_double_taps</item>
+    </string-array>
+    <string-array name="localPdfModeEntries">
+        <item>Disabled</item>
+        <item>Use PDF.js for Web Rendering</item>
+        <item>Use Built-in PDF Viewer (Android 5+)</item>
+        <item>Launch Standard App for PDF</item>
+    </string-array>
+    <string-array name="localPdfModeValues">
+        <item>0</item>
+        <item>4</item>
+        <item>1</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="on_interaction_array">
+        <item>Do nothing</item>
+        <item>Play next file</item>
+        <item>Play next item</item>
+    </string-array>
+    <string-array name="orientationListEntries">
+        <item>Auto</item>
+        <item>Portrait</item>
+        <item>Landscape</item>
+        <item>Reverse Portrait</item>
+        <item>Reverse Landscape</item>
+    </string-array>
+    <string-array name="orientationListValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="passwordQualityListEntries">
+        <item>Unspecified</item>
+        <item>Something</item>
+        <item>Numeric</item>
+        <item>Numeric Complex</item>
+        <item>Alphabetic</item>
+        <item>Alphanumeric</item>
+        <item>Complex</item>
+    </string-array>
+    <string-array name="passwordQualityListValues">
+        <item>0</item>
+        <item>65536</item>
+        <item>131072</item>
+        <item>196608</item>
+        <item>262144</item>
+        <item>327680</item>
+        <item>393216</item>
+    </string-array>
+    <string-array name="remoteFileModeEntries">
+        <item>Disabled</item>
+        <item>Pass an URL to External App</item>
+        <item>Download and Pass a File to External App</item>
+    </string-array>
+    <string-array name="remoteFileModeValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="remotePdfModeEntries">
+        <item>Disabled</item>
+        <item>Use PDF.js for Web Rendering</item>
+        <item>Use Built-in PDF Viewer (Android 5+)</item>
+        <item>Use Google Docs (only for public PDFs)</item>
+        <item>Launch Standard App for PDF</item>
+    </string-array>
+    <string-array name="remotePdfModeValues">
+        <item>0</item>
+        <item>4</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="runtimePermissionPolicyListEntries">
+        <item>Prompt</item>
+        <item>Grant</item>
+        <item>Deny</item>
+    </string-array>
+    <string-array name="runtimePermissionPolicyListValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="systemUpdatePolicyListEntries">
+        <item>As soon as available</item>
+        <item>Postpone for 30 days</item>
+        <item>Only in time window 10pm-2am</item>
+    </string-array>
+    <string-array name="systemUpdatePolicyListValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="userAgentEntries">
+        <item>Default</item>
+        <item>Chrome 69 on Windows</item>
+        <item>Internet Explorer 11 on Windows</item>
+        <item>Internet Explorer Edge on Windows</item>
+        <item>Firefox 54 on Windows</item>
+        <item>Safari 7 on Macintosh</item>
+        <item>Safari 6 on iPad</item>
+    </string-array>
+    <string-array name="userAgentValues">
+        <item>0</item>
+        <item>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36</item>
+        <item>Mozilla/5.0 (compatible, MSIE 11, Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko</item>
+        <item>Mozilla/5.0 (Windows NT 6.4; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36 Edge/12.0</item>
+        <item>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0</item>
+        <item>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A</item>
+        <item>Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25</item>
+    </string-array>
+</resources>

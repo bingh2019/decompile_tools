@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/lockedLayerOverlay" android:background="#80808080" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="60.0sp" android:textStyle="bold" android:textColor="#80101010" android:layout_gravity="center" android:id="@id/lockedLayerText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:text="Locked for Maintenance" />
+    <requestFocus />
+</FrameLayout>

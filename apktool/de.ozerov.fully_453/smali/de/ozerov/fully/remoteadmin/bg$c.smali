@@ -1,0 +1,283 @@
+.class public Lde/ozerov/fully/remoteadmin/bg$c;
+.super Ljava/lang/Object;
+.source "NanoHTTPD.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lde/ozerov/fully/remoteadmin/bg;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xc
+    name = "c"
+.end annotation
+
+
+# static fields
+.field private static final a:Ljava/lang/String; = "US-ASCII"
+
+.field private static final b:Ljava/lang/String; = "UTF-8"
+
+.field private static final c:Ljava/lang/String; = "multipart/form-data"
+
+.field private static final d:Ljava/lang/String; = "[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)"
+
+.field private static final e:Ljava/util/regex/Pattern;
+
+.field private static final f:Ljava/lang/String; = "[ |\t]*(charset)[ |\t]*=[ |\t]*[\'|\"]?([^\"^\'^;^,]*)[\'|\"]?"
+
+.field private static final g:Ljava/util/regex/Pattern;
+
+.field private static final h:Ljava/lang/String; = "[ |\t]*(boundary)[ |\t]*=[ |\t]*[\'|\"]?([^\"^\'^;^,]*)[\'|\"]?"
+
+.field private static final i:Ljava/util/regex/Pattern;
+
+
+# instance fields
+.field private final j:Ljava/lang/String;
+
+.field private final k:Ljava/lang/String;
+
+.field private final l:Ljava/lang/String;
+
+.field private final m:Ljava/lang/String;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    const-string v0, "[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)"
+
+    const/4 v1, 0x2
+
+    .line 535
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lde/ozerov/fully/remoteadmin/bg$c;->e:Ljava/util/regex/Pattern;
+
+    const-string v0, "[ |\t]*(charset)[ |\t]*=[ |\t]*[\'|\"]?([^\"^\'^;^,]*)[\'|\"]?"
+
+    .line 539
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lde/ozerov/fully/remoteadmin/bg$c;->g:Ljava/util/regex/Pattern;
+
+    const-string v0, "[ |\t]*(boundary)[ |\t]*=[ |\t]*[\'|\"]?([^\"^\'^;^,]*)[\'|\"]?"
+
+    .line 543
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lde/ozerov/fully/remoteadmin/bg$c;->i:Ljava/util/regex/Pattern;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 5
+
+    .line 553
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 554
+    iput-object p1, p0, Lde/ozerov/fully/remoteadmin/bg$c;->j:Ljava/lang/String;
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_0
+
+    .line 556
+    sget-object v2, Lde/ozerov/fully/remoteadmin/bg$c;->e:Ljava/util/regex/Pattern;
+
+    const-string v3, ""
+
+    const/4 v4, 0x1
+
+    invoke-direct {p0, p1, v2, v3, v4}, Lde/ozerov/fully/remoteadmin/bg$c;->a(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lde/ozerov/fully/remoteadmin/bg$c;->k:Ljava/lang/String;
+
+    .line 557
+    sget-object v2, Lde/ozerov/fully/remoteadmin/bg$c;->g:Ljava/util/regex/Pattern;
+
+    invoke-direct {p0, p1, v2, v1, v0}, Lde/ozerov/fully/remoteadmin/bg$c;->a(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lde/ozerov/fully/remoteadmin/bg$c;->l:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_0
+    const-string v2, ""
+
+    .line 559
+    iput-object v2, p0, Lde/ozerov/fully/remoteadmin/bg$c;->k:Ljava/lang/String;
+
+    const-string v2, "UTF-8"
+
+    .line 560
+    iput-object v2, p0, Lde/ozerov/fully/remoteadmin/bg$c;->l:Ljava/lang/String;
+
+    :goto_0
+    const-string v2, "multipart/form-data"
+
+    .line 562
+    iget-object v3, p0, Lde/ozerov/fully/remoteadmin/bg$c;->k:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 563
+    sget-object v2, Lde/ozerov/fully/remoteadmin/bg$c;->i:Ljava/util/regex/Pattern;
+
+    invoke-direct {p0, p1, v2, v1, v0}, Lde/ozerov/fully/remoteadmin/bg$c;->a(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/ozerov/fully/remoteadmin/bg$c;->m:Ljava/lang/String;
+
+    goto :goto_1
+
+    .line 565
+    :cond_1
+    iput-object v1, p0, Lde/ozerov/fully/remoteadmin/bg$c;->m:Ljava/lang/String;
+
+    :goto_1
+    return-void
+.end method
+
+.method private a(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;I)Ljava/lang/String;
+    .locals 0
+
+    .line 570
+    invoke-virtual {p2, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object p1
+
+    .line 571
+    invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p1, p4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object p3
+
+    :cond_0
+    return-object p3
+.end method
+
+
+# virtual methods
+.method public a()Ljava/lang/String;
+    .locals 1
+
+    .line 575
+    iget-object v0, p0, Lde/ozerov/fully/remoteadmin/bg$c;->j:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public b()Ljava/lang/String;
+    .locals 1
+
+    .line 579
+    iget-object v0, p0, Lde/ozerov/fully/remoteadmin/bg$c;->k:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c()Ljava/lang/String;
+    .locals 1
+
+    .line 584
+    iget-object v0, p0, Lde/ozerov/fully/remoteadmin/bg$c;->l:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "UTF-8"
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lde/ozerov/fully/remoteadmin/bg$c;->l:Ljava/lang/String;
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public d()Ljava/lang/String;
+    .locals 1
+
+    .line 588
+    iget-object v0, p0, Lde/ozerov/fully/remoteadmin/bg$c;->m:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public e()Z
+    .locals 2
+
+    const-string v0, "multipart/form-data"
+
+    .line 592
+    iget-object v1, p0, Lde/ozerov/fully/remoteadmin/bg$c;->k:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public f()Lde/ozerov/fully/remoteadmin/bg$c;
+    .locals 3
+
+    .line 596
+    iget-object v0, p0, Lde/ozerov/fully/remoteadmin/bg$c;->l:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    .line 597
+    new-instance v0, Lde/ozerov/fully/remoteadmin/bg$c;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lde/ozerov/fully/remoteadmin/bg$c;->j:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "; charset=UTF-8"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lde/ozerov/fully/remoteadmin/bg$c;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+
+    :cond_0
+    return-object p0
+.end method

@@ -1,0 +1,3 @@
+org.acra.config.HttpSenderConfigurationBuilderFactory
+org.acra.config.LimiterConfigurationBuilderFactory
+org.acra.config.ToastConfigurationBuilderFactory

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>$short_name Remote Admin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="$slug-favicon.ico">
+    <style>
+* { margin: 0; padding: 0; }
+body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; text-align:left; box-sizing:border-box; overflow-x:hidden; min-height:100%; }
+h1 { font-size: 1.35em; margin-bottom: 0.7em;} 
+h2 { font-size: 1em; } 
+img.header { max-width:100%; }
+img.screenshot, #imgholder { max-width:100%; border:2px solid #666666; margin-top:0.2em; margin-bottom:0.4em; text-align:center; }
+#imgholder { display:none; min-width:100%; min-height:195px;}
+form, input, textarea, p, div { font-size: 1.0em; }
+p  {margin-bottom: 1em;}
+p.buttonline  {margin-bottom: 0em; line-height: 1.5em;}
+.small { font-size: 0.7em; }
+.key { display: none; }
+a, a:visited {color: #304ffe; text-decoration:none;}
+.disabled { color: #808080; }
+
+p.error, p.success, p.saving { line-height:1.5em; margin-top:0.5em; }
+p.error, p.success { margin-left:-1.8em; margin-right:-1.8em; padding-left:1.8em; padding-right:1.8em; }
+.table-cell p.error, .table-cell p.success, .table-value p.error, .table-value p.success {  margin-left: -0.5em;  margin-right: -0.5em; padding-left:1.2em; padding-right:1.2em; }
+p.error { color: #FFFFFF; background:#FF0000; border-top:2px solid #880000;border-bottom:2px solid #880000;}
+p.success { color: #FFFFFF; background:#00CC00; border-top:2px solid #007700;border-bottom:2px solid #007700;}
+
+table.table { width:100%; background-color:#eee; border:1px solid #666666; border-spacing:0.2em; margin-bottom:0.5em; }
+table.spaceafter { margin-bottom:1.5em;}
+tr.table-row { }
+td.table-cell { background-color:#ddd; padding:0.3em; margin:0.1em; vertical-align:top; }
+td.table-head { background-color:#bbb; padding:0.3em; vertical-align:top; font-weight: bold;}
+td.table-value { background-color:#ccc; padding:0.3em; vertical-align:top; text-align:right;}
+
+.editArea {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  display: none;
+}
+
+.smallicon {
+  height: 0.8em;
+  width: 0.8em;
+}
+
+.button, .smallbutton {
+  color: #ffffff;
+  background: #37474f;
+  font-size: 1.00em;
+  font-weight: bold;
+  border: 1px solid #808080;
+  height: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.button:hover, .smallbutton:hover {
+  color: #ffffff;
+  background: #6a6a6a;
+}
+
+a.button, .smallbutton {
+  color: #ffffff;
+  font-size: 0.9em;
+  height: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-decoration:none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.formline, .formlinesmall, textarea {
+  border: 1px solid #37474f;
+  min-height: 2em;
+  padding-left: 0.2em;
+  font-size: 0.9em;
+}
+
+.formlinesmall {
+  height: 1.7em;
+  font-size: 0.8em;
+}
+
+.content {
+  width: 90%;
+  min-height:100%;
+  max-width:40em;
+  margin: 0 auto;
+  transition: 0.5s;
+  padding: 5.5em 1.8em 1.8em;
+  background: #ffffff;
+  box-shadow: 0 0 1.2em rgba(0,0,0,0.5);
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width:55em) {
+    .banner {
+      margin: 0 auto;
+      /*transition: 0.5s;*/
+      padding: 5.5em 1.8em 1.8em;
+      background: #ffffff;
+      position:absolute;
+      top: 0;
+      left: 43em;
+    }
+}
+
+@media (max-width:55em) {
+    .banner {
+      display:none;
+    }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+#hamburger-checkbox {
+  display: none;
+}
+
+label.hamburger {
+  position: fixed;
+  width: 3.8em;
+  height: 3.8em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 999;
+}
+
+label.hamburger span {
+  display: block;
+  top: 8px;
+  width: 1.5em;
+  height: 0.3em;
+  background-color: #ffffff;
+  position: relative;
+  /*position: absolute;*/
+  top: 1.6em;
+  left: 1.1em;
+  -webkit-transition-duration: 0;
+  -moz-transition-duration: 0;
+  -ms-transition-duration: 0;
+  -o-transition-duration: 0;
+  transition-duration: 0;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+label.hamburger span::after, label.hamburger span::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 1.5em;
+  height: 0.3em;
+  background-color: #ffffff;
+  -webkit-transition-property: margin, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0.2s, 0;
+  -moz-transition-delay: 0.2s, 0;
+  -ms-transition-delay: 0.2s, 0;
+  -o-transition-delay: 0.2s, 0;
+  transition-delay: 0.2s, 0;
+}
+
+label.hamburger span::before {
+  margin-top: -0.5em;
+}
+label.hamburger span::after {
+  margin-top: 0.5em;
+}
+
+#hamburger-checkbox:checked ~ label.hamburger span {
+  background-color: transparent;
+}
+#hamburger-checkbox:checked ~ label.hamburger span::before,
+#hamburger-checkbox:checked ~ label.hamburger span::after {
+  margin-top: 0px;
+  -webkit-transition-delay: 0, 0.2s;
+  -moz-transition-delay: 0, 0.2s;
+  -ms-transition-delay: 0, 0.2s;
+  -o-transition-delay: 0, 0.2s;
+  transition-delay: 0, 0.2s;
+}
+#hamburger-checkbox:checked ~ label.hamburger span::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#hamburger-checkbox:checked ~ label.hamburger span::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#hamburger-checkbox:checked ~ nav.off-canvas-menu {
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  transition: 0.5s;
+}
+
+#hamburger-checkbox:checked ~ .content {
+  -ms-transform: translateX(11em);
+  -webkit-transform: translateX(11em);
+  transform: translateX(11em);
+  transition: 0.5s;
+}
+
+#hamburger-checkbox:checked ~ .overlay {
+  height: 100%;
+  opacity: 1;
+}
+
+nav li,
+label.hamburger {
+  transition: 0.2s;
+}
+
+nav li:hover,
+label.hamburger:hover,
+#hamburger-checkbox:checked ~ label.hamburger {
+  background: #207ce5 !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.8em;
+  background: #37474f;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+  z-index: 3;
+}
+
+.main-menu header {
+  font-size: 1.35em;
+  font-weight: bold;
+  margin-left: 4em;
+  margin-top: 0.7em;
+  white-space: nowrap;
+}
+
+.main-menu header a {
+  text-decoration:none;
+  color: #ffffff;
+}
+
+.main-menu header a:visited {
+  color: #ffffff;
+}
+
+.main-menu ul.nav-icons {
+  float: right;
+}
+
+.main-menu li {
+  float: left;
+  line-height: 3.8em;
+  list-style: none;
+  transition: 0.3s;
+}
+
+.main-menu li a {
+  display: inline-block;
+}
+
+.main-menu li i {
+  width: 3.8em;
+  font-size: 1em;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 11em;
+  height: 100%;
+  background: #37474f;
+  font-size: 1em;
+  -ms-transform: translateX(-11em);
+  -webkit-transform: translateX(-11em);
+  transform: translateX(-100%);
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.off-canvas-menu input[type=checkbox] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.off-canvas-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.off-canvas-menu > ul {
+  margin-top: 3.8em;
+}
+
+.off-canvas-menu a {
+  display: block;
+  padding: 1.0em 1.2em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.off-canvas-menu li {
+  position: relative;
+  float: left;
+  width: 100%;
+  list-style: none;
+  color: #ffffff;
+  transition: 0.5s;
+  border-top: 1px solid #555;
+}
+
+.off-canvas-menu > ul > li:last-child {
+  border-bottom: 1px solid #555;
+}
+
+.off-canvas-menu ul li:first-child {
+  border-top: none;
+}
+
+.off-canvas-menu ul > li.sub > a:after {
+  position: relative;
+  float: right;
+  content: '+';
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #ffffff;
+  vertical-align: middle;
+  transition: 0.5s;
+}
+
+.off-canvas-menu .submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  border-top: none;
+}
+
+.off-canvas-menu input[type=checkbox]:checked ~ .submenu {
+  border-top: 1px solid #555;
+  max-height: 999px;
+}
+
+.off-canvas-menu input[type=checkbox]:checked ~ a:after {
+  transform: rotate(45deg);
+}
+
+.off-canvas-menu .submenu li {
+  background: #333;
+}
+
+.off-canvas-menu .submenu li a {
+  padding-left: 30px;
+}
+
+.off-canvas-menu .submenu li li a {
+  padding-left: 35px;
+}
+
+.off-canvas-menu .submenu li li li a {
+  padding-left: 40px;
+}
+
+.off-canvas-menu .submenu li.sub {
+  list-style: none;
+}
+
+
+</style>
+<script defer src="jquery.min.js"></script>
+<script>
+function showClass(className) {
+    var elements = document.getElementsByClassName(className), i;
+    for (var i = 0; i < elements.length; i ++) elements[i].style.display = "inline";
+}
+function askAndLoadUrl() {
+    var url=prompt("Enter URL to show in $short_name","");
+    if (url!=null)
+        window.location = "?cmd=loadURL&url="+encodeURIComponent(url);
+}
+function askAndLoadZip() {
+    var url=prompt("Enter ZIP file URL to load and unpack to /sdcard. Be careful, existing files will be overwritten!","");
+    if (url!=null)
+        window.location = "?cmd=loadZipFile&url="+encodeURIComponent(url);
+}
+function askAndLoadApk() {
+    var url=prompt("Enter APK file URL to load and install. Upgrade from APK will fail if the app was installed from Google Play. No downgrade is possible on this way. ATTENTION: $short_name WILL STOP and user input is required ON THE DEVICE in order to install the APK file!!!","");
+    if (url!=null)
+        window.location = "?cmd=loadApkFile&url="+encodeURIComponent(url);
+}
+function toggleImage(url) {
+    var image = document.getElementById("imgholder");
+    if (image.style.display == "none" || image.style.display == "" || image.src.indexOf(url)<0) {
+        image.style.display = "block";
+        $("#refreshbutton").show();
+
+        var img = new Image(); // Preload
+        img.src = url + "&time="+new Date().getTime();
+
+        img.addEventListener('load', function () {
+           var image = document.getElementById("imgholder");
+           image.src = this.src;
+        }, false);
+    }
+    else {
+        image.style.display = "none";
+        $("#refreshbutton").hide();
+    }
+}
+function refreshImage(url) {
+    $("#refreshbutton").hide();
+    if (!document.images) return;
+    var img = new Image();
+    img.src = url + "&time="+new Date().getTime();
+
+    img.addEventListener('load', function () {
+       var image = document.getElementById("imgholder");
+       image.src = this.src;
+       setTimeout('refreshImage(\''+url+'\')', 100); // refresh after the next 100ms
+    }, false);
+}
+
+function toggleVisibility(id) {
+    var element = document.getElementById(id);
+    if (element.style.display == "none" || element.style.display == "")
+        element.style.display = "block";
+    else
+        element.style.display = "none";
+}
+
+function submitForm(key) {
+
+    if (!window.jQuery) {
+        setTimeout(function() { submitForm(key); }, 200);
+        return;
+    }
+
+  	var markerId = "marker-"+Math.floor((Math.random() * 100000) + 1);
+    var form = $("#form-"+key);
+    var area = $("#edit-"+key);
+    var value = $("#value-"+key);
+    var newValue = "";
+
+    if (form.find('input[name="value"]').attr('type')=='radio')
+        newValue = form.find('input[name="value"]:checked').attr('customValue');
+    else if (form.find('textarea[name="value"]').length) {
+        if (form.find('textarea[name="value"]').attr('type')=='json')
+            newValue = "(JSON)";
+        else
+            newValue = form.find('textarea[name="value"]').val();
+    }
+    else if (form.find('input[name="value"]').attr('type')=='password')
+        newValue = "*****";
+    else
+        newValue = form.find('input[name="value"]').val();
+
+  	console.log(" Form data: "+form.serialize());
+  	console.log(" New value: "+newValue);
+
+    area.hide();
+    area.after("<div id='"+markerId+"' class='markerarea'><p class='saving'>Saving... </p></div>");
+    marker = $("#"+markerId);
+
+   	$.ajax({
+      dataType: "json",
+      url: "?type=json",
+      method: "POST",
+      data: form.serialize()})
+
+	  .done(function( json ) {
+	    console.log( "JSON Status: " + json.status+", "+json.statustext );
+	    if (json.status == "OK") {
+	    	value.html(htmlEncode(newValue));
+	    	marker.html("<p class='success'>"+htmlEncode(json.statustext)+"</p>");
+	    }
+	    else if (json.status == "Error") {
+	    	marker.html("<p class='error'>"+htmlEncode(json.statustext)+"</p>");
+	    }
+	    else {
+	    	marker.html("<p class='error'>Error communicating with device</p>");
+	    }
+	    marker.delay(1500).fadeOut(300, function() { marker.hide('slow', function(){ marker.remove(); }); });
+	  })
+
+	  .fail(function( jqxhr, textStatus, error ) {
+	    console.log(" Request Failed: " + textStatus + ", " + error);
+	    console.log(" Response: "+ jqxhr.responseText);
+	    marker.html("<p class='error'>Error communicating with device</p>");
+	    marker.delay(1500).fadeOut(300, function() { marker.hide('slow', function(){ marker.remove(); }); });
+      }
+    );
+}
+
+function htmlEncode(value){
+  return $('<div/>').text(value).html().replace(/\n/g,"<br>");
+}
+
+function htmlDecode(value){
+  return $('<div/>').html(value).text();
+}
+</script>
+</head>
+<body>
+
+<input type="checkbox" id="hamburger-checkbox">
+<label for="hamburger-checkbox" class="hamburger"><span></span></label>
+
+<div class="overlay"></div>
+
+<div class="banner">
+    <a href="?cmd=home"><img class="header" src="$slug-header-web-90.png" /></a>
+</div>

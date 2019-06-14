@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/fullyActivityView" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/dummyPreferencesContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <de.ozerov.fully.TouchableFrameLayout android:id="@id/mainFrame" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/actionBarArea" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <android.support.v7.widget.Toolbar android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@id/actionBar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:elevation="4.0dip" app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+            <FrameLayout android:id="@id/webviewArea" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/actionBar">
+                <TextView android:textColor="#ff8080b0" android:layout_gravity="start|bottom|center" android:id="@id/loadingWebview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:text="@string/loading_webview" />
+                <FrameLayout android:id="@id/webTabManagerHolder" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+        </RelativeLayout>
+        <FrameLayout android:id="@id/playlistPlayerWebContainer" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/playlistPlayerMediaContainer" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:layout_gravity="center" android:id="@id/fullscreenVideoContainer" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/pdfRendererContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/mediaPlayerContainer" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/screensaverFragmentContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include layout="@layout/plus_announce" />
+        <FrameLayout android:id="@id/welcomeContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </de.ozerov.fully.TouchableFrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/actionBarAreaPrefs" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v7.widget.Toolbar android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@id/actionBarPrefs" android:background="?colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:elevation="4.0dip" app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+        <FrameLayout android:id="@id/preferencesContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/lockedLayer" android:background="#80808080" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="60.0dip" android:textStyle="bold" android:textColor="#80101010" android:layout_gravity="center" android:id="@id/lockedLayerText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:text="@string/locked_for_maintenance" />
+    </FrameLayout>
+</FrameLayout>
